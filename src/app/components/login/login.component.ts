@@ -35,8 +35,11 @@ export class LoginComponent {
     let data = this.form.value;
     if(this.form.valid) {
       if(data.username == 'abc@gmail.com' && data.password == '123456') {
+        //save data in browser to check the person is alredy login 
         this.SaveDataOnLocalStorage();
+        //navigate to home
         this.router.navigate(['/home']);
+        //propmt
         this.toastr.success('You are Loggedin', 'Success');
       } else {
         this.toastr.error('Invalid username or password', 'Error');

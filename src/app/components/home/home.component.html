@@ -1,1 +1,18 @@
-<p>This is a Home Page</p>
+<h1>User's Profile</h1>
+
+<h3><b>Name: </b> {{name}}</h3>
+<h3><b>Age: </b> {{age}}</h3>
+<h3>Married: {{(married) ? 'Yes': 'False'}}</h3> 
+<h3>Married: <span *ngIf="married">Yes</span> <span *ngIf="!married">No</span></h3>
+<h3>Married: <ng-container *ngIf="married">Yes</ng-container> <ng-container *ngIf="!married">No</ng-container></h3>
+
+<ul>
+    <ng-container *ngFor="let child of child_list; let x=index;">
+        <li *ngIf="x != 0">
+            
+                {{child.name}}
+        </li>
+    </ng-container>
+    
+</ul>
+
